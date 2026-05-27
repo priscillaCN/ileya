@@ -12,24 +12,18 @@ import org.junit.jupiter.api.BeforeEach;
 public class BookSuggestionSystemTest {
 
     ArrayList<String> books;
+    Random testRandom;
 
     @BeforeEach
     void setUp(){
-       books  = new ArrayList<>();
+        books  = new ArrayList<>();
+        testRandom = new Random();
     }
 
     @Test
     public void givenDisplayMenu_whenInputIsMenu_thenDisplaySystemMenu() {
-    
-        String menu = """
-            1. Get Suggestions
-            2. Add Book
-            3. Remove Book
-            4. Update Book
-            5. Show All Books
-            """;
 
-    assertEquals(menu, BookSuggestionSystem.displayMenu(menu));
+        BookSuggestionSystem.displayMenu(menu);
 
     }
 
@@ -37,8 +31,6 @@ public class BookSuggestionSystemTest {
     @Test
     public void givenGetBookSuggestion_whenInputIsAnEmptyArrayList_thenThrowAnIllegalArgumentException() {
     
-        Random testRandom =  new Random();
-
         assertThrows(IllegalArgumentException.class, () -> BookSuggestionSystem.getBookSuggestion(books, testRandom));
 
     }
@@ -47,7 +39,6 @@ public class BookSuggestionSystemTest {
     @Test
     public void givenGetBookSuggestion_whenInputIsAnArrayListWithBooks_thenReturnRandomlySuggestedBook() {
    
-
         books.add("The Client");
         books.add("Gone Girl");
         books.add("Purple Hibiscus");
@@ -55,7 +46,7 @@ public class BookSuggestionSystemTest {
 
         String selectedBook = "Gone Girl";
         int randomIndex = books.indexOf(selectedBook);
-        Random testRandom =  new Random(randomIndex);
+        testRandom =  new Random(randomIndex);
     
         assertEquals(selectedBook, BookSuggestionSystem.getBookSuggestion(books, testRandom));
 
@@ -72,18 +63,17 @@ public class BookSuggestionSystemTest {
     @Test
     public void givenIsPageSuggestionWithinRange_whenInputIsRandomWithValue100_thenReturnTrue() {
 
-        Random testRandom =  new Random();
-        boolean result = BookSuggestionSystem.isPageSuggestionWithinRange(testRandom);
+        boolean isWithinRange = BookSuggestionSystem.isPageSuggestionWithinRange(testRandom);
 
-        assertTrue(result);
+        assertTrue(isWithinRange);
 
     }
 
 
     @Test
-    public void givenAddBook_whenInputIsOneBook_thenReturnBookAddedMessage() {
+    public void givenAddBook_whenInputIsANewBook_thenReturnBookAddedMessage() {
 
-        String title = "Davinci Code";
+        String title = "Life At Semicolon";
         String expected = "Book added successfully";
 
         assertEquals(expected, BookSuggestionSystem.addBook(title, books));
@@ -167,7 +157,7 @@ public class BookSuggestionSystemTest {
     public void givenRemoveBook_whenInputIsABookThatDoesNotExists_thenThrowAnIllegalArgumentException() {
 
         books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
-        String title = "Davinci Code";
+        String title = "No Passion For Tech";
 
         assertThrows(IllegalArgumentException.class, () -> BookSuggestionSystem.removeBook(title, books));
 
@@ -192,7 +182,7 @@ public class BookSuggestionSystemTest {
     public void givenUpdateBook_whenOldTitleDoesNotExists_thenThrowAnIllegalArgumentException() {
 
         books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
-        String oldTitle = "Davinci Code";
+        String oldTitle = "No Passion For Tech";
         String newTitle = "";
 
         assertThrows(IllegalArgumentException.class, () -> BookSuggestionSystem.updateBook(oldTitle, newTitle, books));

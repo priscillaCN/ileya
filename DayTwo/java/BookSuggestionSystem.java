@@ -4,19 +4,18 @@ import java.util.Random;
 
 public class BookSuggestionSystem {
 
-    public static String displayMenu(String menu) {
+    public static String displayMenu() {
     
-       menu = """
+       System.out.println("""
             1. Get Suggestions
             2. Add Book
             3. Remove Book
             4. Update Book
             5. Show All Books
-            """;
-
-        return menu;
+            """);
 
     }
+
 
     public static String getBookSuggestion (ArrayList <String> books, Random bookSuggestion) {
     
