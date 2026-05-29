@@ -1,8 +1,8 @@
 public class CaesarCipher {
 
-    public static String getEncryption(String userInput) {
+    public static String getEncryptedMessage(String userInput) {
 
-        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
         char [] alphabet = letters.toCharArray();
         char [] word = userInput.toCharArray();
 
@@ -15,7 +15,7 @@ public class CaesarCipher {
             for(int alphabetIndex = 0; alphabetIndex < alphabet.length; alphabetIndex++) {
 
                 if(Character.toLowerCase(word[userIndex]) == Character.toLowerCase(alphabet[alphabetIndex])) {
-                    cipherIndex = (alphabetIndex + 3) % 26;
+                    cipherIndex = (alphabetIndex + 3) % 27;
                     encrypt[count] = alphabet[cipherIndex];
                     count++;          
                 }
@@ -31,9 +31,9 @@ public class CaesarCipher {
 
 
 
-    public static String getDecryption(String userInput) {
+    public static String getDecryptedMessage(String userInput) {
 
-        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
         char [] alphabet = letters.toCharArray();
         char [] word = userInput.toCharArray();
 
@@ -46,7 +46,7 @@ public class CaesarCipher {
             for(int alphabetIndex = 0; alphabetIndex < alphabet.length; alphabetIndex++) {
 
                 if(Character.toLowerCase(word[userIndex]) == Character.toLowerCase(alphabet[alphabetIndex])) {
-                    decipherIndex = (alphabetIndex - 3 + 26) % 26;
+                    decipherIndex = (alphabetIndex - 3 + 27) % 27;
                     decrypt[count] = alphabet[decipherIndex];
                     count++;          
                 }

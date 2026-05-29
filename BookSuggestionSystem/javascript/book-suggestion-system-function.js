@@ -97,5 +97,5 @@ function showBooks(books) {
 
 }
 
-module.exports = {displayMenu}
+module.exports = {displayMenu, getBookSuggestion, isPageSuggestionWithinRange, addBook, removeBook, updateBook, showBooks}
 
