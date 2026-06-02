@@ -1,5 +1,6 @@
 const prompt = require("prompt-sync")();
 
+
 let customerName = String(prompt("What is the customer's name?:  "));
 let cashierName = String(prompt("What is your name?:  "));
 		
@@ -66,31 +67,31 @@ console.log("Date: 02-Jun-26 1:57:31 pm");
 console.log("Cashier: " + cashierName);
 console.log("Customer Name: " + customerName);
 console.log("\n=================================================================\n");
-console.log("	ITEM		QTY		PRICE		TOTAL(NGN)");
+console.log(`ITEM\t\t\tQTY\t    PRICE    \tTOTAL(NGN)`);
 console.log("\n----------------------------------------------------------------\n");
 		
 for(let index = 0; index <= count; index++) {
 			
     let itemTotal =  pricePerItem[index] * quantityPerItem[index];
 
-    const item  = items[index].padEnd(15);
+    const item  = items[index].padEnd(10);
     const quantity = String(quantityPerItem[index]).padStart(15);
-    const price = String(pricePerItem[index].toFixed(2)).padStart(15);
-    const total = String(itemTotal.toFixed(2)).padStart(15);
+    const price = pricePerItem[index].toFixed(2).padStart(15);
+    const total = itemTotal.toFixed(2).padStart(15);
 			
-    console.log(`${item} ${quantity} ${price} ${total}`);
+   console.log(`${item} ${quantity} ${price} ${total}`);
 			
 }
 		
 console.log("\n\n---------------------------------------------------------------\n");
-console.log("Sub Total: ".padStart(40) + subTotal.toFixed(2).padStart(20));
-console.log("Discount: ".padStart(40) + discount.toFixed(2).padStart(20));
-console.log("VAT @ 7.50%: ".padStart(40) + vat.toFixed(2).padStart(20));
+console.log("Sub Total: ".padStart(40) + subTotal.toFixed(2).padStart(18));
+console.log("Discount: ".padStart(40) + discount.toFixed(2).padStart(18));
+console.log("VAT @ 7.50%: ".padStart(40) + vat.toFixed(2).padStart(18));
 	
 console.log("\n===============================================================\n");
-console.log("Bill Total: ".padStart(40) + billTotal.toFixed(2).padStart(20));
-console.log("Amount Paid: ".padStart(40) + amountPaid.toFixed(2).padStart(20));
-console.log("Balance: ".padStart(40) + balance.toFixed(2).padStart(20));
+console.log("Bill Total: ".padStart(40) + billTotal.toFixed(2).padStart(18));
+console.log("Amount Paid: ".padStart(40) + amountPaid.toFixed(2).padStart(18));
+console.log("Balance: ".padStart(40) + balance.toFixed(2).padStart(18));
 		
 console.log("\n===============================================================\n");
 console.log("\t\tTHANK YOU FOR YOUR PATRONAGE");
