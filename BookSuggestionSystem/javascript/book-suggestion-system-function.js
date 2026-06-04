@@ -89,7 +89,7 @@ function updateBook (oldTitle, newTitle, books) {
 }
 
 
-function showBooks(books) {
+function showListOfBooks(books) {
 
     for (const book of books) {
         console.log(book);
@@ -97,5 +97,5 @@ function showBooks(books) {
 
 }
 
-module.exports = {displayMenu, getBookSuggestion, isPageSuggestionWithinRange, addBook, removeBook, updateBook, showBooks}
+module.exports = {displayMenu, getBookSuggestion, isPageSuggestionWithinRange, addBook, removeBook, updateBook, showListOfBooks}
 

@@ -16,17 +16,17 @@ public class PersonalityTest {
         System.out.print("-------------------------------------");
         System.out.println("\nKindly answer A or B for all questions.\nYour result will be determined by your responses.\n\npress 1 to begin");
 
-        int begin = userInput.nextInt();
+        int beginTest = userInput.nextInt();
 
-        int question = 0;
+        int quizQuestion = 0;
         String options = "";
 
         String optionA = "";
         String optionB = "";
 
-        while(begin != 1) {                
+        while(beginTest != 1) {                
             System.out.println("\nI know this is an Error\nPlease press 1");
-            begin = userInput.nextInt();
+            beginTest = userInput.nextInt();
         }
 
         String [] selectedOptionsForSectionOne = new String [5];
@@ -39,9 +39,9 @@ public class PersonalityTest {
         System.out.println("\n\nSECTION ONE");
         System.out.print("================================================\n");
 
-        for(question = 1; question <= 5; question++) {
+        for(quizQuestion = 1; quizQuestion <= 5; quizQuestion++) {
 
-            switch (question) {
+            switch (quizQuestion) {
 
                 case 1 -> {
                             optionA = "expend energy, enjoy groups";
@@ -90,7 +90,7 @@ public class PersonalityTest {
 
             else {
                 System.out.println("\nI know this is an error.\nPlease enter A or B");
-                question--;
+                quizQuestion--;
                 count--;
             }
 
@@ -113,9 +113,9 @@ public class PersonalityTest {
         System.out.println("\nSECTION TWO");
         System.out.print("===============================================\n");
 
-        for(question = 6; question <= 10; question++) {
+        for(quizQuestion = 6; quizQuestion <= 10; quizQuestion++) {
 
-            switch (question) {
+            switch (quizQuestion) {
 
                 case 6 -> {
                             optionA = "interpret literally";
@@ -164,7 +164,7 @@ public class PersonalityTest {
 
             else {
                 System.out.println("\nI know this is an error.\nPlease enter A or B");
-                question--;
+                quizQuestion--;
                 count--;
             }
 
@@ -185,12 +185,12 @@ public class PersonalityTest {
         System.out.println("\nSECTION THREE");
         System.out.print("=============================================\n");
 
-        for(question = 11; question <= 15; question++) {
+        for(quizQuestion = 11; quizQuestion <= 15; quizQuestion++) {
 
-            switch (question) {
+            switch (quizQuestion) {
 
                 case 11 -> {
-                            optionA = "logical, thinking, questioning";
+                            optionA = "logical, thinking, quizQuestioning";
                             optionB = "empathetic, feeling, accommodating";
                             options = "\nTHINKING T VS FEELING F\n\nA. " + optionA + "\t B. " + optionB;
                            }
@@ -237,7 +237,7 @@ public class PersonalityTest {
 
             else {
                 System.out.println("\nI know this is an error.\nPlease enter A or B");
-                question--;
+                quizQuestion--;
                 count--;
             }
 
@@ -258,9 +258,9 @@ public class PersonalityTest {
         System.out.println("\nSECTION FOUR");
         System.out.print("============================================\n");
 
-        for(question = 16; question <= 20; question++) {
+        for(quizQuestion = 16; quizQuestion <= 20; quizQuestion++) {
 
-            switch (question) {
+            switch (quizQuestion) {
 
                 case 16 -> {
                             optionA = "organized, orderly";
@@ -310,7 +310,7 @@ public class PersonalityTest {
 
             else {
                 System.out.println("\nI know this is an error.\nPlease enter A or B");
-                question--;
+                quizQuestion--;
                 count--;
             }
 
@@ -362,11 +362,11 @@ public class PersonalityTest {
         System.out.println("\nYour personality type is: " + userPersonalityType);
 
         System.out.println("press 1 to know more about " + userPersonalityType);
-        int knowMore = userInput.nextInt();
+        int moreInformationOnUserPersonality = userInput.nextInt();
 
-        while(knowMore != 1) {                
+        while(moreInformationOnUserPersonality != 1) {                
             System.out.println("\nI know this is an Error\nPlease press 1");
-            knowMore = userInput.nextInt();
+            moreInformationOnUserPersonality = userInput.nextInt();
         }
 
         if(userPersonalityType.equals("INTJ"))
@@ -442,7 +442,7 @@ public class PersonalityTest {
             System.out.println("""
                                 The Debater (ENTP) personality type is defined by a bold, quick-witted, and highly creative approach to life. 
                                 Characterized by immense mental agility, these individuals thrive on deconstructing and rebuilding concepts, 
-                                constantly pushing past traditional boundaries. They are natural nonconformists who aren't afraid to question the status quo, 
+                                constantly pushing past traditional boundaries. They are natural nonconformists who aren't afraid to quizQuestion the status quo, 
                                 frequently finding joy in verbal sparring and adopting a playful, contrarian sense of humor to test ideas.
 
                                 Driven by an insatiable desire for innovation, Debaters act as ultimate devil's advocates, 

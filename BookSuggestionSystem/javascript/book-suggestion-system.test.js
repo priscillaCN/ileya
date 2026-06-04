@@ -1,4 +1,4 @@
-const {displayMenu, getBookSuggestion, isPageSuggestionWithinRange, addBook, removeBook, updateBook, showBooks} = require('./book-suggestion-system-function')
+const {displayMenu, getBookSuggestion, isPageSuggestionWithinRange, addBook, removeBook, updateBook, showListOfBooks} = require('./book-suggestion-system-function')
 
 test("test that display menu functions will return menu when called", () => {
 
@@ -137,10 +137,10 @@ test("test that when old book title does not exist then throw an error message",
 })
 
 
-test("test that show books function will return list of books when called", () => {
+test("test that show list of books function will return list of books when called", () => {
 
      const books = ["Life At Semicolon", "The Client", "Purple Hibiscus", "Blink Of An Eye"]
-     showBooks(books);
+     showListOfBooks(books);
 
 })
 

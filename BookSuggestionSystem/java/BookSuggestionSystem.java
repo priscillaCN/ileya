@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class BookSuggestionSystem {
 
-    public static String displayMenu() {
+    public static void displayMenu() {
     
        System.out.println("""
             1. Get Suggestions
@@ -96,7 +96,7 @@ public class BookSuggestionSystem {
     }
 
 
-    public static void showBooks(ArrayList <String> books) {
+    public static void showListOfBooks(ArrayList <String> books) {
 
         for (String book : books) {
             System.out.println(book);

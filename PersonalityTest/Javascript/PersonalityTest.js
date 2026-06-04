@@ -9,17 +9,17 @@ console.log("\nINSTRUCTIONS");
 console.log("-------------------------------------");
 console.log("\nKindly answer A or B for all questions.\nYour result will be determined by your responses.\n\n");
 
-let begin = (prompt("Press 1 to begin:  "));
+let beginTest = (prompt("Press 1 to begin:  "));
 
-let question = 0;
-let options = "";
+let quizQuestion = 0;
+let optionsPerquizQuestion = "";
 
 let optionA = "";
 let optionB = "";
 
-while(begin != 1) {
+while(beginTest != 1) {
     console.log("\nI know this is an Error\n");
-    begin = (prompt("Please press 1:  "));
+    beginTest = (prompt("Please press 1:  "));
 }
 
 const selectedOptionsForSectionOne = [];
@@ -32,48 +32,48 @@ let numberOfBForSectionOne = 0;
 console.log("\n\nSECTION ONE");
 console.log("================================================\n");
 
-for(question = 1; question <= 5; question++) {
+for(quizQuestion = 1; quizQuestion <= 5; quizQuestion++) {
 
-    switch (question) {
+    switch (quizQuestion) {
 
         case 1: {
             optionA = "expend energy, enjoy groups";
             optionB = "conserve energy, enjoy one-on-one";
-            options = "\nEXTROVERTED E VS INTROVERTED I\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nEXTROVERTED E VS INTROVERTED I\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 2: {
             optionA = "more outgoing, think out loud";
             optionB = "more reserved, think to yourself";
-            options = "\nA. " + optionA + "\t B. " +  optionB;
+            optionsPerquizQuestion = "\nA. " + optionA + "\t B. " +  optionB;
             break;
         }
 
         case 3: {
             optionA = "seek many tasks, public activities, interaction with others";
             optionB = "seek private, solitary activities with quiet to concentrate";
-            options = "\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 4: {
             optionA = "external, communicative, express yourself";
             optionB = "internal, reticent, keep to yourself";
-            options = "\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
     case 5: {
             optionA = "active, initiate";
             optionB = "reflective, deliberate";
-            options = "\nA. " + optionA + "\t B. " + optionB ;
+            optionsPerquizQuestion = "\nA. " + optionA + "\t B. " + optionB ;
             break;
         }
 
     }
 
-    console.log(options);  
+    console.log(optionsPerquizQuestion);  
     userChoice = String(prompt(""));
 
     if(userChoice.toUpperCase() === "A") {
@@ -88,7 +88,7 @@ for(question = 1; question <= 5; question++) {
 
     else {
         console.log("\nI know this is an error.\nPlease enter A or B");
-        question--;
+        quizQuestion--;
         count--;
     }
 
@@ -112,48 +112,48 @@ let numberOfBForSectionTwo = 0;
 console.log("\nSECTION TWO");
 console.log("===============================================\n");
 
-for(question = 6; question <= 10; question++) {
+for(quizQuestion = 6; quizQuestion <= 10; quizQuestion++) {
 
-    switch (question) {
+    switch (quizQuestion) {
 
         case 6: {
             optionA = "interpret literally";
             optionB = "look for meaning and possibilities";
-            options = "\nSENSING S VS INTUITIVE N\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nSENSING S VS INTUITIVE N\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 7: {
             optionA = "practical, realistic, experiential";
             optionB = "imaginative, innovative, theoretical";
-            options = "\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 8: {
             optionA = "standard, usual, conventional";
             optionB = "different, novel, unique";
-            options = "\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 9: {
             optionA = "focus on here-and-now";
             optionB = "look to the future, global perspective, big picture";
-            options = "\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 10: {
             optionA = "facts, things, what is";
             optionB = "ideas, dreams, what could be, philosophical";
-            options = "\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
 }
 
-    console.log(options);  
+    console.log(optionsPerquizQuestion);  
     userChoice = String(prompt(""));
 
     if(userChoice.toUpperCase() === "A") {
@@ -168,7 +168,7 @@ for(question = 6; question <= 10; question++) {
 
     else {
         console.log("\nI know this is an error.\nPlease enter A or B");
-        question--;
+        quizQuestion--;
         count--;
     }
 
@@ -189,49 +189,49 @@ let numberOfBForSectionThree = 0;
 console.log("\nSECTION THREE");
 console.log("=============================================\n");
 
-for(question = 11; question <= 15; question++) {
+for(quizQuestion = 11; quizQuestion <= 15; quizQuestion++) {
 
-    switch (question) {
+    switch (quizQuestion) {
 
         case 11: {
-            optionA = "logical, thinking, questioning";
+            optionA = "logical, thinking, quizQuestioning";
             optionB = "empathetic, feeling, accommodating";
-            options = "\nTHINKING T VS FEELING F\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nTHINKING T VS FEELING F\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 12: {
             optionA = "candid, straight forward, frank";
             optionB = "tactful, kind, encouraging";
-            options = "\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 13: {
             optionA = "firm, tend to criticize, hold the line";
             optionB = "gentle, tend to appreciate, conciliate";
-            options = "\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 14: {
             optionA = "tough-minded, just";
             optionB = "tender-hearted, merciful";
-            options = "\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 15: {
             optionA = "matter of fact, issue-oriented";
             optionB = "sensitive, people-oriented, compassionate";
-            options = "\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
     }
 
 
-    console.log(options);  
+    console.log(optionsPerquizQuestion);  
     userChoice = String(prompt(""));;
 
     if(userChoice.toUpperCase() === "A") {
@@ -246,7 +246,7 @@ for(question = 11; question <= 15; question++) {
 
     else {
         console.log("\nI know this is an error.\nPlease enter A or B");
-        question--;
+        quizQuestion--;
         count--;
     }
 
@@ -267,49 +267,49 @@ let numberOfBForSectionFour = 0;
 console.log("\nSECTION FOUR");
 console.log("============================================\n");
 
-for(question = 16; question <= 20; question++) {
+for(quizQuestion = 16; quizQuestion <= 20; quizQuestion++) {
 
-    switch (question) {
+    switch (quizQuestion) {
 
         case 16: {
             optionA = "organized, orderly";
             optionB = "flexible, adaptable";
-            options = "\nJUDGING J VS PERCEPTIVE P\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\nJUDGING J VS PERCEPTIVE P\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 17: {
             optionA = "plan, schedule";
             optionB = "unplanned, spontaneous";
-            options = "\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 18: {
             optionA = "regulated, structured";
             optionB = "easy-going, live and let live";
-            options = "\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 19: {
             optionA = "preparation, plan ahead";
             optionB = "go with the flow, adapt as you go";
-            options = "\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
         case 20: {
             optionA = "control, govern";
             optionB = "latitude, freedom";
-            options = "\n\nA. " + optionA + "\t B. " + optionB;
+            optionsPerquizQuestion = "\n\nA. " + optionA + "\t B. " + optionB;
             break;
         }
 
     }
 
 
-    console.log(options);  
+    console.log(optionsPerquizQuestion);  
     userChoice = String(prompt(""));
 
     if(userChoice.toUpperCase() === "A") {
@@ -324,7 +324,7 @@ for(question = 16; question <= 20; question++) {
 
     else {
         console.log("\nI know this is an error.\nPlease enter A or B");
-        question--;
+        quizQuestion--;
         count--;
     }
 
@@ -376,11 +376,11 @@ let userPersonalityType = userResultPerSection.join('');
 console.log("\nYour personality type is: " + userPersonalityType);
 
 console.log("press 1 to know more about " + userPersonalityType);
-let knowMore = Number(prompt(""));
+let moreInformationOnUserPersonality = Number(prompt(""));
 
-while(knowMore != 1) {
+while(moreInformationOnUserPersonality != 1) {
     console.log("\nI know this is an Error\nPlease press 1");
-    knowMore = Number(prompt(""));
+    moreInformationOnUserPersonality = Number(prompt(""));
 }
 
 if(userPersonalityType === "INTJ")
@@ -459,7 +459,7 @@ if(userPersonalityType ===  "ENTP")
     console.log(`
         The Debater (ENTP) personality type is defined by a bold, quick-witted, and highly creative approach to life. 
         Characterized by immense mental agility, these individuals thrive on deconstructing and rebuilding concepts, 
-        constantly pushing past traditional boundaries. They are natural nonconformists who aren't afraid to question the status quo, 
+        constantly pushing past traditional boundaries. They are natural nonconformists who aren't afraid to quizQuestion the status quo, 
         frequently finding joy in verbal sparring and adopting a playful, contrarian sense of humor to test ideas.
 
         Driven by an insatiable desire for innovation, Debaters act as ultimate devil's advocates, 

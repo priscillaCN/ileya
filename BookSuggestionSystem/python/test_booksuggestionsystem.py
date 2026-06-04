@@ -4,7 +4,7 @@ import booksuggestionsystem
 
 class DisplayMenuFunction(unittest.TestCase): 
 
-    def test_that_display_menu_functions_will_return_menu_when_called(self):
+    def test_that_display_menu_function_will_return_menu_when_called(self):
 
         booksuggestionsystem.display_menu()
 
@@ -111,7 +111,7 @@ class UpdateBookFunction(unittest.TestCase):
 
         self.assertEqual(expected, booksuggestionsystem.update_book(old_title, new_title, books)) 
 
-    def test_that_when_old_book_title_does_not_exist_the_raise_value_error(self):  
+    def test_that_when_old_book_title_does_not_exist_then_raise_value_error(self):  
 
         books = ["Life At Semicolon"]
         old_title = "No Passion For Tech"
@@ -122,11 +122,11 @@ class UpdateBookFunction(unittest.TestCase):
 
 class ShowBooksFunction(unittest.TestCase):
 
-    def test_that_show_books_function_will_return_list_of_books_when_called(self):
+    def test_that_show_list_of_books_function_will_return_list_of_books_when_called(self):
 
         books = ["Life At Semicolon", "The Client", "Purple Hibiscus", "Blink Of An Eye"]
 
-        booksuggestionsystem.show_books(books)
+        booksuggestionsystem.show_list_of_books(books)
 
                
 

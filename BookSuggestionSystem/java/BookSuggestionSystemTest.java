@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,19 +16,19 @@ public class BookSuggestionSystemTest {
     @BeforeEach
     void setUp(){
         books  = new ArrayList<>();
-        testRandom = new Random();
-    }
-
-    @Test
-    public void givenDisplayMenu_whenInputIsMenu_thenDisplaySystemMenu() {
-
-        BookSuggestionSystem.displayMenu(menu);
 
     }
 
+    @Test
+    public void testThatDisplayMenuFunctionWwillReturnMenuWhenCalled() {
+
+        BookSuggestionSystem.displayMenu();
+
+    }
+
 
     @Test
-    public void givenGetBookSuggestion_whenInputIsAnEmptyArrayList_thenThrowAnIllegalArgumentException() {
+    public void testThatWhenListIsEmptyThenThrowAnIllegalArgumentException() {
     
         assertThrows(IllegalArgumentException.class, () -> BookSuggestionSystem.getBookSuggestion(books, testRandom));
 
@@ -37,7 +36,7 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenGetBookSuggestion_whenInputIsAnArrayListWithBooks_thenReturnRandomlySuggestedBook() {
+    public void testThatWhenListIsNotEmptyThenABookIsSuggestedAtRandom() {
    
         books.add("The Client");
         books.add("Gone Girl");
@@ -61,7 +60,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenIsPageSuggestionWithinRange_whenInputIsRandomWithValue100_thenReturnTrue() {
+    public void testThatWhenPageSelectionRangeIs1To100ThenReturnTrueIfRandomlySuggestedPageFallsWithinRange() {
+        
+        testRandom = new Random();
 
         boolean isWithinRange = BookSuggestionSystem.isPageSuggestionWithinRange(testRandom);
 
@@ -71,7 +72,7 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenAddBook_whenInputIsANewBook_thenReturnBookAddedMessage() {
+    public void testThatWhenANewBookIsAddedThenReturnBookAddedSuccessfullyMessage() {
 
         String title = "Life At Semicolon";
         String expected = "Book added successfully";
@@ -82,9 +83,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenAddBook_whenInputIsABookThatAlreadyExists_thenThrowAnIllegalArgumentException() {
+    public void testThatWhenAnAlreadyExistingBookIsAddedThenThrowAnIllegalArgumentException() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
+        books.add("Life At Semicolon");
         String title = "Life At Semicolon";
 
         assertThrows(IllegalArgumentException.class, () -> BookSuggestionSystem.addBook(title, books));
@@ -93,9 +94,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenAddBook_whenInputIsABookThatAlreadyExistsWrittenInUppercase_thenThrowAnIllegalArgumentException() {
+    public void testThatWhenAnAlreadyExistingBookWrittenInUppercaseIsAddedThenThrowAnIllegalArgumentException() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
+        books.add("Life At Semicolon");
         String title = "LIFE AT SEMICOLON";
 
         assertThrows(IllegalArgumentException.class, () -> BookSuggestionSystem.addBook(title, books));
@@ -104,9 +105,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenAddBook_whenInputIsABookThatAlreadyExistsWrittenInLowercase_thenThrowAnIllegalArgumentException() {
+    public void testThatWhenAnAlreadyExistingBookWrittenInLowercaseIsAddedThenThrowAnIllegalArgumentException() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
+        books.add("Life At Semicolon");
         String title = "life at semicolon";
 
         assertThrows(IllegalArgumentException.class, () -> BookSuggestionSystem.addBook(title, books));
@@ -115,9 +116,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenRemoveBook_whenInputIsABookThatAlreadyExists_thenReturnBookRemovedMessage() {
+    public void testThatWhenAnOldBookIsRemovedThenReturnBookRemovedSuccesfullyMessage() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
+        books.add("Life At Semicolon");
         String title = "Life At Semicolon";
         String expected = "Book removed successfully";
 
@@ -128,9 +129,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenRemoveBook_whenInputIsABookThatAlreadyExistsWrittenInUppercase_thenReturnBookRemovedMessage() {
+    public void testThatWhenAnOldBookWrittenInUppercaseIsRemovedThenReturnBookRemovedSuccesfullyMessage() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
+        books.add("Life At Semicolon");
         String title = "LIFE AT SEMICOLON";
         String expected = "Book removed successfully";
 
@@ -141,9 +142,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenRemoveBook_whenInputIsABookThatAlreadyExistsWrittenInLowercase_thenReturnBookRemovedMessage() {
+    public void testThatWhenAnOldBookWrittenInLowercaseIsRemovedThenReturnBookRemovedSuccesfullyMessage() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
+        books.add("Life At Semicolon");
         String title = "life at semicolon";
         String expected = "Book removed successfully";
 
@@ -154,9 +155,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenRemoveBook_whenInputIsABookThatDoesNotExists_thenThrowAnIllegalArgumentException() {
+    public void testThatWhenABookThatDoesNotExistIsRemovedThenThrowAnIllegalArgumentException() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
+        books.add("Life At Semicolon");
         String title = "No Passion For Tech";
 
         assertThrows(IllegalArgumentException.class, () -> BookSuggestionSystem.removeBook(title, books));
@@ -165,9 +166,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenUpdateBook_whenOldTitleIsUpdated_thenReturnBookUpdatedMessage() {
+    public void testThatWhenOldBookIsUpdatedThenReturnBookUpdatedMessage() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
+        books.add("Life At Semicolon");
         String oldTitle = "Life At Semicolon";
         String newTitle = "No Life At Semicolon";
         String expected = "Book updated successfully";
@@ -179,9 +180,9 @@ public class BookSuggestionSystemTest {
 
 
     @Test
-    public void givenUpdateBook_whenOldTitleDoesNotExists_thenThrowAnIllegalArgumentException() {
+    public void testThatWhenOldBookTitleDoesNotExistThenThrowAnIllegalArgumentException() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon"));
+        books.add("Life At Semicolon");
         String oldTitle = "No Passion For Tech";
         String newTitle = "";
 
@@ -190,10 +191,14 @@ public class BookSuggestionSystemTest {
     }
 
     @Test
-    public void givenShowBooks_whenInputIsAnArrayListWithBooks_thenDisplayListOfBooks() {
+    public void testThatShowListOfBooksFunctionWillReturnListOfBooksWhenCalled() {
 
-        books = new ArrayList<>(Arrays.asList("Life At Semicolon", "The Client", "Purple Hibiscus", "Blink Of An Eye"));
-        BookSuggestionSystem.showBooks(books);
+        books.add("Life At Semicolon");
+        books.add("The Client");
+        books.add("Purple Hibiscus");
+        books.add("Blink Of An Eye");
+
+        BookSuggestionSystem.showListOfBooks(books);
 
     }
     

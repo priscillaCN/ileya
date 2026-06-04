@@ -68,11 +68,14 @@ public class CreditCardValidator {
     public static String validateCardNumber (int [] cardNumber) {
 
         String validityStatus = "";
+        int cardNumberLength = cardNumber.length;
 
         int sumOfDoubledDigits = doubleEverySecondDigit (cardNumber);
         int sumOfDigitsInOddPlaces = addEveryDigitInOddPlaces (cardNumber);
 
         int sum = sumOfDoubledDigits + sumOfDigitsInOddPlaces;
+
+        if(cardNumberLength < 13 || cardNumberLength > 16) validityStatus = "Invalid";
 
         if(sum % 10 == 0) validityStatus = "Valid";
         else validityStatus = "Invalid";
@@ -89,14 +92,12 @@ public class CreditCardValidator {
         String creditCardNumber = userInput.nextLine();
 
         int [] cardNumberArray = getCardNumberArray (creditCardNumber);
-        String userCardType = getCardType (cardNumberArray);
-        String userCardValidityStatus = validateCardNumber (cardNumberArray);
 
         System.out.println("\n***************************************************\n");
-        System.out.println("**Credit Card Type: " + userCardType);
+        System.out.println("**Credit Card Type: " + getCardType (cardNumberArray));
         System.out.println("\n**Credit Card Number: " + creditCardNumber);
         System.out.println("\n**Credit Card Digit Length: " + cardNumberArray.length);
-        System.out.println("\n**Credit Card Validity Status: " + userCardValidityStatus);
+        System.out.println("\n**Credit Card Validity Status: " + validateCardNumber (cardNumberArray));
         System.out.println("\n***************************************************\n");
 
     }

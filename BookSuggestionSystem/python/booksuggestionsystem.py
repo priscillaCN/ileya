@@ -67,7 +67,7 @@ def update_book (old_title, new_title, books):
     return "Book updated successfully" 
      
 
-def show_books(books): 
+def show_list_of_books(books): 
 
     for book in books: 
         print(book)

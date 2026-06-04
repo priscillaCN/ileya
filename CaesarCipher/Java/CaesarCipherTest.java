@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CaesarCipherTest {
 
     @Test
-    public void givenGetEncryptedMessage_whenInputIsAWordInUppercase_thenReturnEncryptedWord() {
+    public void testThatWhenUserInputsAWordInUppercaseThenReturnEncryptedWord() {
 
         String text = "SEMICOLON";
 
@@ -14,7 +14,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetEncryptedMessage_whenInputIsAWordInLowercase_thenReturnEncryptedWord() {
+    public void testThatWhenUserInputsAWordInLowercaseThenReturnEncryptedWord() {
 
         String text = "semicolon";
 
@@ -24,7 +24,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetEncryptedMessage_whenInputIsAWordInMixedcase_thenReturnEncryptedWord() {
+    public void testThatWhenUserInputsAWordInMixedcaseThenReturnEncryptedWord() {
 
         String text = "SemiColoN";
 
@@ -33,7 +33,7 @@ public class CaesarCipherTest {
     }
 
     @Test
-    public void givenGetEncryptedMessage_whenInputIsASentenceInUppercase_thenReturnEncryptedSentence() {
+    public void testThatWhenUserInputsASentenceInUppercaseThenReturnEncryptedSentence() {
 
         String text = "I LOVE RICE";
 
@@ -43,7 +43,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetEncryptedMessage_whenInputIsASentenceInLowercase_thenReturnEncryptedSentence() {
+    public void testThatWhenUserInputsASentenceInLowercaseThenReturnEncryptedSentence() {
 
         String text = "i love rice";
 
@@ -53,7 +53,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetEncryptedMessage_whenInputIsASentenceInMixedcase_thenReturnEncryptedSentence() {
+    public void testThatWhenUserInputsASentenceInMixedcaseThenReturnEncryptedSentence() {
 
         String text = "I LovE RicE";
 
@@ -63,7 +63,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetDecryptedMessage_whenInputIsAWordInUppercase_thenReturnDecryptedWord() {
+    public void testThatWhenUserInputsAnEncryptedWordInUppercaseThenReturnDecryptedWord() {
 
         String text = "VHPLFRORQ";
 
@@ -74,7 +74,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetDecryptedMessage_whenInputIsAWordInLowercase_thenReturnDecryptedWord() {
+    public void testThatWhenUserInputsAnEncryptedWordInLowercaseThenReturnDecryptedWord() {
 
         String text = "vhplfrorq";
 
@@ -84,7 +84,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetDecryptedMessage_whenInputIsAWordInMixedcase_thenReturnDecryptedWord() {
+    public void testThatWhenUserInputsAnEncryptedWordInMixedcaseThenReturnDecryptedWord() {
 
         String text = "VhplFrorQ";
 
@@ -94,7 +94,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetDecryptedMessage_whenInputIsASentenceInUppercase_thenReturnDecryptedSentence() {
+    public void testThatWhenUserInputsAnEncyptedSentenceInUppercaseThenReturnDecryptedSentence() {
 
         String text = "LCORYHCULFH";
 
@@ -104,7 +104,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetDecryptedMessage_whenInputIsASentenceInLowercase_thenReturnDecryptedSentence() {
+    public void testThatWhenUserInputsAnEncryptedSentenceInLowercaseThenReturnDecryptedSentence() {
 
         String text = "lcoryhculfh";
 
@@ -114,7 +114,7 @@ public class CaesarCipherTest {
 
 
     @Test
-    public void givenGetDecryptedMessage_whenInputIsASentenceInMixedcase_thenReturnDecryptedSentence() {
+    public void testThatWhenUserInputsAnEncryptedSentenceInMixedcaseThenReturnDecryptedSentence() {
 
         String text = "LcOryHcUlfH";
 

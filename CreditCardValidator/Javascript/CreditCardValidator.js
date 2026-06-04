@@ -65,10 +65,13 @@ function validateCardNumber (cardNumber) {
 
     let validityStatus = "";
 
+    let cardNumberLength = cardNumber.length;
     let sumOfDoubledDigits = doubleEverySecondDigit (cardNumber);
     let sumOfDigitsInOddPlaces = addEveryDigitInOddPlaces (cardNumber);
 
     let sum = sumOfDoubledDigits + sumOfDigitsInOddPlaces;
+
+    if(cardNumberLength < 13 || cardNumberLength > 16) validityStatus = "Invalid";
 
     if(sum % 10 === 0) validityStatus = "Valid";
     else validityStatus = "Invalid";
@@ -83,13 +86,11 @@ console.log("\nHello, kindly enter card number to verify");
 let creditCardNumber = String(prompt(""));
 
 const cardNumberArray = getCardNumberArray (creditCardNumber);
-let userCardType = getCardType (cardNumberArray);
-let userCardValidityStatus = validateCardNumber (cardNumberArray);
 
 console.log("\n***************************************************\n");
-console.log("**Credit Card Type: " + userCardType);
+console.log("**Credit Card Type: " + getCardType (cardNumberArray));
 console.log("\n**Credit Card Number: " + creditCardNumber);
 console.log("\n**Credit Card Digit Length: " + cardNumberArray.length);
-console.log("\n**Credit Card Validity Status: " + userCardValidityStatus);
+console.log("\n**Credit Card Validity Status: " + validateCardNumber (cardNumberArray));
 console.log("\n***************************************************\n");
 
