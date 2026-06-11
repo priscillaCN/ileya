@@ -3,7 +3,18 @@ import java.util.Arrays;
 
 public class StudentGrade {
 
-    public static int [][] collectAllSubjectScoresForEachStudent (Scanner userInput, int numberOfStudents, int numberOfSubjects) {
+    public static int [][] collectAllSubjectScoresForEachStudent () {
+
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.println("\nHow many students do you have?");
+        int numberOfStudents = userInput.nextInt();
+
+        System.out.println("How many subjects do they offer?");
+        int numberOfSubjects = userInput.nextInt();
+
+        System.out.println("\nSaving >>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println("Saved successfully");
 
         int [][] studentsSubjectsAndScores = new int [numberOfStudents][numberOfSubjects];
 
@@ -14,14 +25,15 @@ public class StudentGrade {
 
                 System.out.println("Enter score for subject " + (scoreIndex + 1));
                 int subjectScore =  userInput.nextInt();
+
+                String scoreVailidityChecker = "yes";
                 
-                while (subjectScore < 0 || subjectScore > 100) {
+                while(scoreVailidityChecker.equals ("yes")) {
 
-                    System.out.println("\ninvalid score");
-
-                    System.out.println("Enter score for subject " + (scoreIndex + 1));
+                    boolean isSubjectScoreValid = isScoreValid (subjectScore, scoreIndex);   
                     subjectScore =  userInput.nextInt();
 
+                    if(isSubjectScoreValid = true) scoreVailidityChecker = "no";
                 }
 
                 System.out.println("\nSaving >>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -35,6 +47,24 @@ public class StudentGrade {
         }
 
         return studentsSubjectsAndScores;
+
+    }
+
+
+    public static boolean isScoreValid (int subjectScore, int scoreIndex) {
+
+        while (subjectScore < 0 || subjectScore > 100) {
+
+            System.out.println("\ninvalid score");
+
+            System.out.println("Enter score for subject " + (scoreIndex + 1));
+
+            return false;
+
+        }
+
+        return true;
+
 
     }
 
@@ -238,7 +268,7 @@ public class StudentGrade {
 
         int [] clone = new int [totalSubjectScores.length];
 
-        for(index = 0; index < totalSubjectScores.length; index++) {
+        for(int index = 0; index < totalSubjectScores.length; index++) {
 
             clone[index] = totalSubjectScores[index];
 

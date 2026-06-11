@@ -1,19 +1,45 @@
-import java.util.Scanner;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class StudentGradeTest {
 
     @Test
-    public void testThatAllSubjectScoresForEachStudentAreCollectedAndReturned() {
+    public void testThatSubjectGreaterThanorEqualToZeroAndScoreLessThanOrEqualTo100IsValid() {
+    
+        int subjectScore = 50;
+        int scoreIndex = 0;
 
-        String input = "45\n67\n53\n50\n67\n50\n99\n78\n34\n77\n63\n60";
-        Scanner testInput = new Scanner(input);
-        int [][] expected = {{45, 67, 53, 50}, {67, 50, 99, 78}, {34, 77, 63, 60}};
+        assertTrue(StudentGrade.isScoreValid (subjectScore, scoreIndex));
 
-        assertArrayEquals(expected, StudentGrade.collectAllSubjectScoresForEachStudent(testInput, 3, 4));        
+        subjectScore = 100;
+        scoreIndex = 2;
+
+        assertTrue(StudentGrade.isScoreValid (subjectScore, scoreIndex));
+
+    }
+
+
+    @Test
+    public void testThatSubjectScoreLessThanZeroIsInvalid() {
+    
+        int subjectScore = -2;
+        int scoreIndex = 1;
+
+        assertFalse(StudentGrade.isScoreValid (subjectScore, scoreIndex));
+
+    }
+
+    @Test
+    public void testThatSubjectScoreGreaterThan100IsInvalid() {
+    
+        int subjectScore = 150;
+        int scoreIndex = 1;
+
+        assertFalse(StudentGrade.isScoreValid (subjectScore, scoreIndex));
 
     }
 
